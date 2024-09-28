@@ -1,0 +1,117 @@
+{
+	"mumbai": {
+		"about": "Mumbai is the capital city of the Indian state of Maharashtra.",
+		"placesToVisit": [
+			"Gateway of India",
+			"Marine Drive",
+			"Juhu Beach"
+		],
+		"hotels": [
+			"The Taj Mahal Palace",
+			"The Oberoi",
+			"Trident"
+		],
+		"restaurants": [
+			"Leopold Cafe",
+			"Britannia & Co.",
+			"Cafe Mondegar"
+		],
+		"howToReach": "Chhatrapati Shivaji Maharaj International Airport is the main airport in Mumbai.",
+		"reviews": [
+			"Mumbai is a great city to visit.",
+			"The street food in Mumbai is amazing."
+		]
+	},
+	"delhi": {
+		"about": "Delhi is the capital city of India.",
+		"placesToVisit": [
+			"Red Fort",
+			"India Gate",
+			"Qutub Minar"
+		],
+		"hotels": [
+			"The Leela Palace",
+			"The Imperial",
+			"Taj Palace"
+		],
+		"restaurants": [
+			"Karim's",
+			"Indian Accent",
+			"Bukhara"
+		],
+		"howToReach": "Indira Gandhi International Airport is the main airport in Delhi.",
+		"reviews": [
+			"Delhi is a historical city.",
+			"Delhi is a great place to shop."
+		]
+	},
+	"bangalore": {
+		"about": "Bangalore is the capital city of the Indian state of Karnataka.",
+		"placesToVisit": [
+			"Lalbagh Botanical Garden",
+			"Cubbon Park",
+			"Bangalore Palace"
+		],
+		"hotels": [
+			"The Leela Palace",
+			"Taj West End",
+			"ITC Windsor"
+		],
+		"restaurants": [
+			"Karavalli",
+			"Karavalli",
+			"Karavalli"
+		],
+		"howToReach": "Kempegowda International Airport is the main airport in Bangalore.",
+		"reviews": [
+			"Bangalore is known as the Silicon Valley of India.",
+			"Bangalore has a great climate."
+		]
+	},
+	"jaipur": {
+		"about": "Jaipur is the capital city of the Indian state of Rajasthan.",
+		"placesToVisit": [
+			"Hawa Mahal",
+			"Amber Fort",
+			"City Palace"
+		],
+		"hotels": [
+			"Rambagh Palace",
+			"Taj Jai Mahal Palace",
+			"Fairmont Jaipur"
+		],
+		"restaurants": [
+			"Laxmi Mishthan Bhandar",
+			"Chokhi Dhani",
+			"Niros"
+		],
+		"howToReach": "Jaipur International Airport is the main airport in Jaipur.",
+		"reviews": [
+			"Jaipur is known as the Pink City.",
+			"Jaipur has a rich history."
+		]
+	},
+	"lucknow": {
+		"about": "Lucknow is the capital city of the Indian state of Uttar Pradesh.",
+		"placesToVisit": [
+			"Bara Imambara",
+			"Chota Imambara",
+			"Rumi Darwaza"
+		],
+		"hotels": [
+			"Taj Mahal Lucknow",
+			"Lebua Lucknow",
+			"Vivanta by Taj"
+		],
+		"restaurants": [
+			"Tunday Kababi",
+			"Dastarkhwan",
+			"Royal Cafe"
+		],
+		"howToReach": "Chaudhary Charan Singh International Airport is the main airport in Lucknow.",
+		"reviews": [
+			"Lucknow is known for its Nawabi culture.",
+			"Lucknow is famous for its kebabs."
+		]
+	}
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>City Details - RocketViews</title>
+
+	<!-- OpenStreetMaps -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@7.2.2/ol.css" />
+	<script src="https://cdn.jsdelivr.net/npm/ol@7.2.2/dist/ol.js" defer></script>
+
+	<link rel="stylesheet" href="Styles/city.css">
+	<script src="Scripts/city.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<a href="index.html">HOME</a>
+		<h1 id="city-name">City Name</h1>
+	</header>
+
+	<div class="container">
+		<!-- Left content section -->
+		<section class="content">
+			<h2>About the City</h2>
+			<p id="about-city">City description will be here.</p>
+
+			<h2>Places to Visit</h2>
+			<ul id="places-to-visit"></ul>
+
+			<h2>Hotels to Stay In</h2>
+			<ul id="hotels-list"></ul>
+
+			<h2>Restaurants</h2>
+			<ul id="restaurants-list"></ul>
+
+			<h2>How to Reach</h2>
+			<div id="how-to-reach"></div>
+
+			<h2>Visitor Reviews</h2>
+			<div id="reviews"></div>
+
+
+		</section>
+
+		<!-- Right image section -->
+		<div class="media">
+			<h2>City Images</h2>
+			<div class="image-gallery">
+				<img alt="PlaceHolder1">
+				<img alt="PlaceHolder2">
+				<img alt="PlaceHolder3">
+			</div>
+
+			
+			<div class="map-container">
+				<h2>Location Map</h2>
+				<div id="OSM-map"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<footer>
+		&copy; 2024 RocketViews
+	</footer>
+</body>
+
+</html>
