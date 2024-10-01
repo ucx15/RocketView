@@ -1,6 +1,6 @@
 
 const fs = require('fs')
-
+const path = require('path')
 const express = require('express')
 const cors = require('cors')
 const dotenv = require('dotenv')
@@ -27,18 +27,32 @@ app.use(
 		"hotels": ["string"],
 		"restaurants": ["string"],
 		"howToReach": "string",
-		"images": ["string", "string", ...],
-		"reviews": ["string"]
-
+		"reviews": ["string"],
+		"images": number
 	},
 	...
 }
 */
+
+
+// Paths
+const imagesDir = path.join(__dirname, './Data/Images/Cities/');
+
+// Data
 const cityData = JSON.parse(fs.readFileSync('./Data/db.json'))
 const cityNames = Object.keys(cityData)
 
 
-app.get('/api/city/:name', (req, res) => {
+// GET routes
+
+// Get all city names
+app.get('/api/cities', (req, res) => {
+	res.json(cityNames)
+})
+
+
+// Get data for a specific city
+app.get('/api/city/:name/data', (req, res) => {
 	const cityName = req.params.name.toLowerCase()
 	if (cityData[cityName]) {
 		res.json(cityData[cityName])
@@ -47,9 +61,25 @@ app.get('/api/city/:name', (req, res) => {
 	}
 })
 
-app.get('/api/cities', (req, res) => {
-	res.json(cityNames)
+// Get images for a specific city
+app.get('/api/city/:name/images/:id', (req, res) => {
+	const cityName = req.params.name.toLowerCase()
+	const id = req.params.id
+
+	if (cityData[cityName]) {
+		const imagePath = path.join(__dirname, `./Data/Images/Cities/${cityName}/${id}.jpg`);
+		if (fs.existsSync){
+			res.sendFile(imagePath)
+		}
+		else {
+			res.status(404).json({ message: "Image not found" })
+		}
+
+	} else {
+		res.status(404).json({ message: "City not found" })
+	}
 })
+
 
 
 app.get('/', (req, res) => {

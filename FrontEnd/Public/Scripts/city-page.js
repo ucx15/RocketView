@@ -1,10 +1,21 @@
+
 // Get URL parameters
 const urlParams = new URLSearchParams(window.location.search);
 const cityName = urlParams.get('name');
 
 
+// API
+const apiURL = `http://localhost:5000/api/city/${cityName}`;
 
+
+// DOM elements
+const imageGallery = document.getElementById('image-gallery');
+
+
+
+// Render city name
 document.getElementById('city-name').textContent = cityName.toUpperCase();
+
 
 // OSM maps
 function getCoordinates(city, callback) {
@@ -39,7 +50,7 @@ function initializeMap(lat, lon) {
     });
 }
 
-fetch(`http://localhost:5000/api/city/${cityName}`)
+fetch(`${apiURL}/data`)
     .then(response => response.status === 404 ? Promise.reject('City not found') : response.json())
     .then(cityData => {
 
@@ -81,7 +92,28 @@ fetch(`http://localhost:5000/api/city/${cityName}`)
             reviewsDiv.appendChild(p);
         });
 
+        // Populate images
+        console.log("Images: ", cityData.images);
+
+        for (let i = 1; i <= cityData.images; i++) {
+            fetch(`${apiURL}/images/${i}`)
+                .then(response => response.status === 404 ? Promise.reject('Image not found') : response.blob())
+                .then(imageBlob => {
+                    const img = document.createElement('img');
+
+                    img.loading = 'lazy';
+                    img.alt = `Image ${i}`;
+                    img.src = URL.createObjectURL(imageBlob);
+
+                    imageGallery.appendChild(img);
+                })
+                .catch(error => {
+                    console.error('Error fetching image:', error);
+                });
+        }
+
     })
+
     .catch(error => {
         console.error('Error fetching city data:', error);
     })

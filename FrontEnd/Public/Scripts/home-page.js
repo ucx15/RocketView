@@ -18,7 +18,6 @@ function displayCities(filteredCities) {
         const li = document.createElement('li');
         li.textContent = titleCase(city);
         li.addEventListener('click', () => {
-            // Redirect to city page on click
             window.location.href = `city.html?name=${encodeURIComponent(city)}`;
         });
         cityList.appendChild(li);

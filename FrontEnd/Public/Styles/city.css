@@ -27,28 +27,18 @@ h1 {
     width: 65%; /* Left column - content */
 }
 
-.images {
-    width: 30%; /* Right column - images */
-    padding-left: 20px;
-}
-
-.images h2 {
-    text-align: center;
-    color: #333;
-}
 
 .image-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
 }
 
 .image-gallery img {
     width: 100%;
-    height: auto;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 /* General content styling */
 h2 {
