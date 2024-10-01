@@ -27,7 +27,7 @@ function displayCities(filteredCities) {
 
 
 // List of cities
-const cities = fetch('http://localhost:5000/cities')
+const cities = fetch('http://localhost:5000/api/cities')
     .then(response => response.json())
     .then(cities => {
 

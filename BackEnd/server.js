@@ -22,18 +22,19 @@ app.use(
 /* DATA SCHEMA
 {
 	"cityName": {
-		"mapURL": "string",
 		"about": "string",
 		"placesToVisit": ["string"],
 		"hotels": ["string"],
 		"restaurants": ["string"],
 		"howToReach": "string",
+		"images": ["string", "string", ...],
 		"reviews": ["string"]
+
 	},
 	...
 }
 */
-const cityData = JSON.parse(fs.readFileSync('db.json'))
+const cityData = JSON.parse(fs.readFileSync('./Data/db.json'))
 const cityNames = Object.keys(cityData)
 
 
@@ -46,13 +47,13 @@ app.get('/api/city/:name', (req, res) => {
 	}
 })
 
-app.get('/cities', (req, res) => {
+app.get('/api/cities', (req, res) => {
 	res.json(cityNames)
 })
 
 
 app.get('/', (req, res) => {
-	res.send('try http://.../api/city/:name')
+	res.send('try http://.../api/city/:<name> or http://.../api/cities')
 })
 
 
