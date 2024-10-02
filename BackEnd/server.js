@@ -28,8 +28,8 @@ app.use(
 		"restaurants": ["string"],
 		"howToReach": "string",
 		"reviews": ["string"],
-		"images": number
 	},
+
 	...
 }
 */
@@ -61,6 +61,30 @@ app.get('/api/city/:name/data', (req, res) => {
 	}
 })
 
+// Get the number of images for a specific city
+app.get('/api/city/:name/images/', (req, res) => {
+	const cityName = req.params.name.toLowerCase()
+
+	if (cityData[cityName]) {
+		const dirPath = path.join(__dirname, `./Data/Images/Cities/${cityName}`)
+
+		fs.readdir(dirPath, (error, files) => {
+			if (error) {
+				console.error(`Error reading directory: ${error.message}`)
+				res.status(500).json({ message: "Internal server error" })
+				return
+			}
+
+			let totalFiles = files.length
+			res.json({"nImages": totalFiles})
+		})
+
+	} else {
+		res.status(404).json({ message: "City not found" })
+	}
+})
+
+
 // Get images for a specific city
 app.get('/api/city/:name/images/:id', (req, res) => {
 	const cityName = req.params.name.toLowerCase()
@@ -68,7 +92,7 @@ app.get('/api/city/:name/images/:id', (req, res) => {
 
 	if (cityData[cityName]) {
 		const imagePath = path.join(__dirname, `./Data/Images/Cities/${cityName}/${id}.jpg`);
-		if (fs.existsSync){
+		if (fs.existsSync) {
 			res.sendFile(imagePath)
 		}
 		else {

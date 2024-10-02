@@ -93,24 +93,30 @@ fetch(`${apiURL}/data`)
         });
 
         // Populate images
-        console.log("Images: ", cityData.images);
+        fetch(`${apiURL}/images`).
+            then(response => response.json()).
+            then(resp => resp.nImages).
+            then(nImages => {
 
-        for (let i = 1; i <= cityData.images; i++) {
-            fetch(`${apiURL}/images/${i}`)
-                .then(response => response.status === 404 ? Promise.reject('Image not found') : response.blob())
-                .then(imageBlob => {
-                    const img = document.createElement('img');
+                for (let i = 1; i <= nImages; i++) {
+                    fetch(`${apiURL}/images/${i}`)
+                        .then(response => response.status === 404 ? Promise.reject('Image not found') : response.blob())
+                        .then(imageBlob => {
+                            const img = document.createElement('img');
 
-                    img.loading = 'lazy';
-                    img.alt = `Image ${i}`;
-                    img.src = URL.createObjectURL(imageBlob);
+                            img.loading = 'lazy';
+                            img.alt = `Image ${i}`;
+                            img.src = URL.createObjectURL(imageBlob);
 
-                    imageGallery.appendChild(img);
-                })
-                .catch(error => {
-                    console.error('Error fetching image:', error);
-                });
-        }
+                            imageGallery.appendChild(img);
+                        })
+                        .catch(error => {
+                            console.error('Error fetching image:', error);
+                        });
+                }
+            })
+
+
 
     })
 
