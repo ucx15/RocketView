@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RocketView Explore Cities</title>
+    <title>RocketView</title>
 
     <link rel="stylesheet" href="Styles/home.css">
     <script src="Scripts/home-page.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <h1>RocketView <img src="./Assets/Icons/rv-Main512.svg" alt="RocketView Logo" style="width: 4rem;"> </h1>
-    </header>
 
-    <section>
-        <h2>Search for a City</h2>
-        <input type="text" id="city-search" placeholder="Search for a city...">
+    <div id="root">
+        <div id="header-filler"></div>
+
+        <header>
+            <div class="title">
+                <!-- <img id="logo-img" src="./Assets/Icons/rv-Main512.svg" alt="RocketView Logo"> -->
+                <h1>RocketView</h1>
+            </div>
+
+            <ul>
+                <li><a href="./Login.html"> Login/Signup</a></li>
+                <li><a href="./about.html"> about</a></li>
+                <li><a href="./contact.html"> contact</a></li>
+            </ul>
+        </header>
 
 
-        <ul id="city-list"> </ul>
-    </section>
 
-    <footer>
-        &copy; 2024 RocketView
-    </footer>
+        <div class="page-container">
+
+            <div class="search-section">
+                <h2>Search for a City</h2>
+                <input type="text" id="city-search" placeholder="🔎">
+
+                <ul id="city-list" class="city-list"> </ul>
+
+            </div>
+
+            <div class="media-section">
+                <!-- <img src="./Assets/Images/leio-mclaren-FwdZYz0yc9g-unsplash.jpg" alt="background image" id="bkgr-img"> -->
+            </div>
+        </div>
+
+
+        <footer>
+            Made with ❤️ by <a href="https://github.com/ucx15" target="_blank" rel="noopener noreferrer" >ucx15</a>
+            <br />
+            &copy; 2024 RocketView. All Rights Reserved.
+        </footer>
+
+    </div>
 </body>
+
 </html>

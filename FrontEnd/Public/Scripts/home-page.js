@@ -16,10 +16,14 @@ function displayCities(filteredCities) {
 
     filteredCities.forEach(city => {
         const li = document.createElement('li');
-        li.textContent = titleCase(city);
+
         li.addEventListener('click', () => {
             window.location.href = `city.html?name=${encodeURIComponent(city)}`;
         });
+
+        li.textContent = titleCase(city);
+        li.classList.add('city-card');
+
         cityList.appendChild(li);
     });
 }

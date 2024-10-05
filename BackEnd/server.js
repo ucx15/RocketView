@@ -66,7 +66,7 @@ app.get('/api/city/:name/images/', (req, res) => {
 	const cityName = req.params.name.toLowerCase()
 
 	if (cityData[cityName]) {
-		const dirPath = path.join(__dirname, `./Data/Images/Cities/${cityName}`)
+		const dirPath = path.join(imagesDir, cityName)
 
 		fs.readdir(dirPath, (error, files) => {
 			if (error) {
