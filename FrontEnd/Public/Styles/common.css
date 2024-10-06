@@ -1,30 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 :root {
     --accent-color: #7e003f;
     --link-color: hsl(178, 70%, 90%);
+    --link-color-hover: #ffda79;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     outline: none;
 }
 
-html, body {
+html,
+body {
     min-height: 100%;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
 
+    color: white;
+
+    background-color: #f5f5f5;
     background-image: url(../Assets/Images/leio-mclaren-FwdZYz0yc9g-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
 }
 
 #root {
@@ -35,15 +41,27 @@ body {
     min-height: 100vh;
 }
 
+
+/* ---- Links ---- */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-color-hover);
+}
+
+
 /* ---- Headings ---- */
 h1,
 h2,
 h3,
 h4,
-h6 h5,
+h5,
 h6 {
     font-style: italic;
-    color: white;
 }
 
 h1 {
@@ -59,18 +77,17 @@ h3 {
 }
 
 
-/* ---- Header ---- */
-#header-filler {
-    height: 4rem;
-}
-
+/* Header */
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1000;
 
     display: flex;
+    align-items: center;
     justify-content: space-between;
+
+    padding: 1.5rem 2rem;
 
     width: 100vw;
     height: 4rem;
@@ -84,33 +101,16 @@ header>.title {
     align-items: center;
 }
 
-header>.title>h1 {
-    padding: 0 1rem;
-}
-
 header>ul {
     display: flex;
-    align-items: center;
-
     gap: 1.5rem;
-    padding: 0 1rem;
-
-    list-style-type: none;
+    list-style: none;
 }
 
 header>ul>li {
     font-size: var(--btn-font-size);
     cursor: pointer;
 }
-
-a {
-    color: var(--link-color);
-    /* text-decoration: none; */
-    /* text-decoration:underline; */
-}
-
-
-
 
 
 /* ---- Footer ---- */
@@ -119,13 +119,15 @@ footer {
     bottom: 0;
     left: 0;
 
-    padding: 10px;
+    margin-top: 2rem;
+    padding: 1rem 0;
 
     width: 100%;
-    /* height: 4rem; */
 
+
+    font-size: 0.9rem;
     text-align: center;
 
     color: white;
-    background-color: var(--accent-color);
+    background-color: #222;
 }

@@ -3,6 +3,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 const cityName = urlParams.get('name');
 
+if  (!cityName) {
+    window.location.replace('/home.html');
+}
+
 
 // API
 const apiURL = `http://localhost:5000/api/city/${cityName}`;

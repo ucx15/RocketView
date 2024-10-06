@@ -17,53 +17,88 @@
 </head>
 
 <body>
-	<header>
-		<a href="home.html">HOME</a>
-		<h1 id="city-name">City Name</h1>
-	</header>
+	<div id="root">
+		<!-- <div id="header-filler"></div> -->
 
-	<div class="container">
-		<!-- Left content section -->
-		<section class="content">
-			<h2>About the City</h2>
-			<p id="about-city">City description will be here.</p>
+		<header>
+			<div class="title">
+				<h1 id="city-name">City Name</h1>
+			</div>
 
-			<h2>Places to Visit</h2>
-			<ul id="places-to-visit"></ul>
+			<ul>
+				<li>
+					<a href="./home.html">HOME</a>
+				<li><a href="./Login.html"> Login/Signup</a></li>
+				<li><a href="./about.html"> about</a></li>
+				<li><a href="./contact.html"> contact</a></li>
+				</li>
+			</ul>
 
-			<h2>Hotels to Stay In</h2>
-			<ul id="hotels-list"></ul>
+		</header>
 
-			<h2>Restaurants</h2>
-			<ul id="restaurants-list"></ul>
+		<div class="page-container">
 
-			<h2>How to Reach</h2>
-			<div id="how-to-reach"></div>
+			<!-- Left content section -->
+			<div class="content">
 
-			<h2>Visitor Reviews</h2>
-			<div id="reviews"></div>
+				<div class="info-card">
+					<h2>About the City</h2>
+					<p id="about-city">City description will be here.</p>
+				</div>
+
+				<div class="info-card">
+					<h2>Places to Visit</h2>
+					<ul id="places-to-visit"></ul>
+				</div>
+
+				<div class="info-card">
+					<h2>Hotels to Stay In</h2>
+					<ul id="hotels-list"></ul>
+				</div>
 
 
-		</section>
+				<div class="info-card">
+					<h2>Restaurants</h2>
+					<ul id="restaurants-list"></ul>
+				</div>
 
-		<!-- Right image section -->
-		<div class="media">
-			<h2>City Images</h2>
-			<div class="image-gallery" id="image-gallery"></div>
+				<div class="info-card">
+					<h2>How to Reach</h2>
+					<ul id="how-to-reach"></ul>
+				</div>
+
+				<div class="info-card">
+					<h2>Visitor Reviews</h2>
+					<div id="reviews"></div>
+				</div>
+			</div>
 
 
-			<div class="map-container">
-				<h2>Location Map</h2>
-				<div id="OSM-map"></div>
+			<!-- Right image section -->
+			<div class="media">
+
+				<div class="info-card">
+					<h2>City Images</h2>
+					<div class="image-gallery" id="image-gallery"></div>
+				</div>
+
+				<div class="map-container info-card">
+					<h2>Location Map</h2>
+					<div id="OSM-map"></div>
+				</div>
+
 			</div>
 
 		</div>
 
-	</div>
 
-	<footer>
-		&copy; 2024 RocketViews
-	</footer>
+		<footer>
+			Made with ❤️ by <a href="https://github.com/ucx15" target="_blank" rel="noopener noreferrer">ucx15</a>
+			<br />
+			&copy; 2024 RocketView.
+		</footer>
+
+	</div>
 
 </body>
 
