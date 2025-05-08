@@ -114,4 +114,9 @@
     .media .image-gallery {
         justify-content: center;
     }
+
+    .map-container {
+        height: 50vh;
+    }
+
 }
