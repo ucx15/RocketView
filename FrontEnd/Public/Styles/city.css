@@ -68,21 +68,19 @@
     max-height: 60vh;
 
     overflow-y: auto;
-    scroll-snap-type: y proximity;
+    /* scroll-snap-type: y mandatory; */
 }
 
 .image-gallery img {
-    width: 100%;
-    max-width: 300px;
-
-    height: auto;
+    max-height: 50vh;
+    max-width: 100%;
 
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.611);
 }
 

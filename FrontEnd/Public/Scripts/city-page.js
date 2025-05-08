@@ -104,7 +104,8 @@ fetch(`${apiURL}/data`)
 
                 for (let i = 1; i <= nImages; i++) {
                     fetch(`${apiURL}/images/${i}`)
-                        .then(response => response.status === 404 ? Promise.reject('Image not found') : response.blob())
+                    // fetch(`${apiURL}/images/lowres/${i}`)
+                        .then(response => response.status === 404 ? Promise.reject(response.json["message"]) : response.blob())
                         .then(imageBlob => {
                             const img = document.createElement('img');
 
@@ -115,7 +116,7 @@ fetch(`${apiURL}/data`)
                             imageGallery.appendChild(img);
                         })
                         .catch(error => {
-                            console.error('Error fetching image:', error);
+                            console.error('Error fetching images', error);
                         });
                 }
             })

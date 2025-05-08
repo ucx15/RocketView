@@ -103,7 +103,30 @@ app.get('/api/city/:name/images/:id', (req, res) => {
 		res.status(404).json({ message: "City not found" })
 	}
 })
+// Get images for a specific city
+app.get('/api/city/:name/images/lowres/:id', (req, res) => {
+	const cityName = req.params.name.toLowerCase()
+	const id = req.params.id
 
+	if (cityData[cityName]) {
+		const imagePath = path.join(__dirname, `./Data/Images/Cities/${cityName}/${id}-lowres.webp`);
+
+		fs.access(imagePath, fs.F_OK, (err) => {
+			if (err) {
+			  console.error(err)
+			  res.status(404)
+			  return
+			}
+
+			res.status(200).sendFile(imagePath)
+			//file exists
+
+		  })
+
+	} else {
+		res.status(404)
+	}
+})
 
 
 app.get('/', (req, res) => {
