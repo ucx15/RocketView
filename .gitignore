@@ -6,4 +6,5 @@
 
 */node_modules
 
-package-lock.json
+BackEnd/package-lock.json
+FrontEnd/package-lock.json
